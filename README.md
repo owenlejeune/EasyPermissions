@@ -19,28 +19,28 @@ and then include the following code in your Activity or Fragment
 
 ```kotlin
 class MainActivity: AppCompatActivity() {
-	override fun onCreate(savedInstanceState: Bundle?) {
-		//...
-		// create the permission manager
-		val permissionManager = EasyPermissions(this)
-		// create a permissions requester
-		val cameraRequester = permissionManager.forPermission(Permissions.Camera)
-			.onDenied {
-				// permission denied
-			}
-			.onPermanentlyDenied {
-				// permission permanently denied
-			}
-			.onGranted {
-				// permission granted
-			}
-			.onRationale {
-				// rationale should be shown
-			}
-			.create(this)
-		// request the permission!
-		cameraRequester.request()
-	}
+    override fun onCreate(savedInstanceState: Bundle?) {
+        //...
+	// create the permission manager
+	val permissionManager = EasyPermissions(this)
+	// create a permissions requester
+	val cameraRequester = permissionManager.forPermission(Permissions.Camera)
+	    .onDenied {
+	        // permission denied
+	    }
+	    .onPermanentlyDenied {
+	       // permission permanently denied
+	    }
+	    .onGranted {
+	        // permission granted
+	    }
+	    .onRationale {
+	        // rationale should be shown
+	    }
+	    .create(this)
+	    // request the permission!
+	    cameraRequester.request()
+    }
 }	
 ```
 
